@@ -3106,7 +3106,7 @@ am__tar='$${TAR-tar} chof - "$$tardir"' am__untar='$${TAR-tar} xf -'
 
 
 
-	ACLOCAL="$ACLOCAL -I \$(top_srcdir)/cmulocal"
+	ACLOCAL="$ACLOCAL -I \$(top_srcdir)/m4"
 
 
 ac_ext=c
