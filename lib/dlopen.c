@@ -159,6 +159,8 @@ char *dlerror()
 #endif /* __ia64 */
 #elif defined(__APPLE__)
 #define SO_SUFFIX	".plugin"
+#elif defined(__WIN32__)
+#define SO_SUFFIX    ".dll"
 #else /* __APPLE__ */
 #define SO_SUFFIX	".so"
 #endif
@@ -476,11 +478,19 @@ int _sasl_load_plugins(const add_plugin_list_t *entrypoints,
 	    position++;
 	    str[pos]=c;
 	    pos++;
+#ifdef __WIN32__
+	} while ((c!=';') && (c!='=') && (c!=0));
+#else
 	} while ((c!=':') && (c!='=') && (c!=0));
+#endif
 	str[pos-1]='\0';
 
 	strcpy(prefix,str);
+#ifdef __WIN32__
+	strcat(prefix,"\\");
+#else
 	strcat(prefix,"/");
+#endif
 
 	if ((dp=opendir(str)) !=NULL) /* ignore errors */    
 	{
