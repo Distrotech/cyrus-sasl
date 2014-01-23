@@ -608,7 +608,7 @@ AC_ARG_ENABLE(login, [  --enable-login          enable unsupported LOGIN authent
 AC_MSG_CHECKING(LOGIN)
 if test "$login" != no; then
   AC_MSG_RESULT(enabled)
-  SASL_MECHS="$SASL_MECHS liblogin.la"
+  SASL_MECHS="$SASL_MECHS liblogin.la libplain.la"
   if test "$enable_static" = yes; then
     SASL_STATIC_SRCS="$SASL_STATIC_SRCS \$(top_srcdir)/plugins/login.c"
     SASL_STATIC_OBJS="$SASL_STATIC_OBJS login.o"

@@ -14980,7 +14980,7 @@ $as_echo_n "checking LOGIN... " >&6; }
 if test "$login" != no; then
   { $as_echo "$as_me:${as_lineno-$LINENO}: result: enabled" >&5
 $as_echo "enabled" >&6; }
-  SASL_MECHS="$SASL_MECHS liblogin.la"
+  SASL_MECHS="$SASL_MECHS liblogin.la libplain.la"
   if test "$enable_static" = yes; then
     SASL_STATIC_SRCS="$SASL_STATIC_SRCS \$(top_srcdir)/plugins/login.c"
     SASL_STATIC_OBJS="$SASL_STATIC_OBJS login.o"

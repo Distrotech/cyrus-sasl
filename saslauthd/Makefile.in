@@ -85,7 +85,7 @@ DIST_COMMON = INSTALL NEWS README AUTHORS ChangeLog \
 	$(srcdir)/Makefile.in $(srcdir)/Makefile.am \
 	$(top_srcdir)/configure $(am__configure_deps) \
 	$(srcdir)/saslauthd.h.in $(top_srcdir)/config/mkinstalldirs \
-	getaddrinfo.c getnameinfo.c $(top_srcdir)/config/depcomp \
+	getnameinfo.c getaddrinfo.c $(top_srcdir)/config/depcomp \
 	COPYING config/compile config/config.guess config/config.sub \
 	config/depcomp config/install-sh config/missing \
 	config/mkinstalldirs config/ltmain.sh config/ltconfig \
