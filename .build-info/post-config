@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [ "${1:0:3}" == "win" ];then
+  patch -p1 -i .build-info/cyrus-sasl-win.diff
+  make clean
+  mkdir include/lib
+  make ${MAKE_J} -C include makemd5.exe
+  case ${1} in
+    win32)WINEPREFIX=~/.wine32 /build/i686/usr/bin/wine include/makemd5.exe > include/md5global.h;;
+    win64)WINEPREFIX=~/.wine64 /build/x86_64/usr/bin/wine64 include/makemd5.exe > include/md5global.h;;
+  esac;
+  make ${MAKE_J} -C lib
+  if [ ! -d plugins/.libs ];then
+    mkdir -p plugins/.libs
+  fi;
+  cp lib/.libs/getaddrinfo.o lib/.libs/getnameinfo.o plugins/.libs/
+  cp lib/.libs/getnameinfo.o lib/.libs/getaddrinfo.o plugins/
+  make ${MAKE_J} -C plugins
+fi;

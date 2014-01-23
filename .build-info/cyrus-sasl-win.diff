@@ -1,0 +1,37 @@
+diff --git a/Makefile.am b/Makefile.am
+index 2091dd1..5304fb2 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -69,7 +69,7 @@ else
+ INSTALLOSX = 
+ endif
+ 
+-SUBDIRS=include sasldb lib plugins utils doc man $(PWC) $(SAM) $(JAV) $(SAD)
++SUBDIRS=include sasldb lib plugins doc man $(PWC) $(SAM) $(JAV) $(SAD)
+ EXTRA_DIST=config cmulocal win32 mac dlcompat-20010505 NTMakefile INSTALL.TXT \
+     libsasl2.pc.in
+ 
+diff --git a/Makefile.in b/Makefile.in
+index be2bb59..341b5cf 100644
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -196,8 +196,8 @@ am__define_uniq_tagged_files = \
+ ETAGS = etags
+ CTAGS = ctags
+ CSCOPE = cscope
+-DIST_SUBDIRS = include sasldb lib plugins utils doc man pwcheck sample \
+-	java saslauthd
++DIST_SUBDIRS = include sasldb lib plugins doc man pwcheck sample java \
++	saslauthd
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+ distdir = $(PACKAGE)-$(VERSION)
+ top_distdir = $(distdir)
+@@ -468,7 +468,7 @@ AUTOMAKE_OPTIONS = 1.7
+ @JAVA_TRUE@JAV = java
+ @MACOSX_FALSE@INSTALLOSX = 
+ @MACOSX_TRUE@INSTALLOSX = install-exec-local-osx
+-SUBDIRS = include sasldb lib plugins utils doc man $(PWC) $(SAM) $(JAV) $(SAD)
++SUBDIRS = include sasldb lib plugins doc man $(PWC) $(SAM) $(JAV) $(SAD)
+ EXTRA_DIST = config cmulocal win32 mac dlcompat-20010505 NTMakefile INSTALL.TXT \
+     libsasl2.pc.in
+ 
